@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо данное задание выполнить в es5 стиле и в es6 стиле.
@@ -17,10 +19,60 @@
 метод должен уменьшать стоимость продукта на 25%.
 Необходимо продемонстрировать работу с объектом (в свободной форме).
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    // Пишем код в стандарте ES5
+    // Создаём функцию-конструктор. Принимает "имя продукта", "цена"
+    function ProductES5(name, price) {
+      // Добавляем свойства
+      this.name = name;
+      this.price = price;
+    };
+
+    // Добавляем в прототип для ProductES5 функцию make25Discount
+    // которая снижает цену на 25%
+    ProductES5.prototype.make25Discount = function () {
+      this.price *= 0.75;
+    };
+
+    // Создаём объект prod1
+    const prod1 = new ProductES5('TV', 1000);
+    // Проверяем, что у нас в объекте.
+    console.log(prod1);
+    // Абракадабра (make25Discount)
+    prod1.make25Discount();
+    // Проверем, сработала ли функция make25Discount
+    console.log(prod1);
+
+
+
+    // Пишем код в стандарте ES6
+    // Создаем класс для нашелго продукта
+    class ProductES6 {
+      // Конструктор
+      constructor(name, price) {
+        // Тут будут свойства
+        this.name = name;
+        this.price = price;
+      }
+
+      // Пишем метод make25Discount
+      make25Discount() {
+        this.price *= 0.75;
+      }
+    }
+
+    // Создаём объект prod2
+    const prod2 = new ProductES6('NewTV', 1000);
+    // Проверяем, что у нас в объекте.
+    console.log(prod2);
+    // Абракадабра (make25Discount)
+    prod2.make25Discount();
+    // Проверем, сработала ли функция make25Discount
+    console.log(prod2);
+
+  </script>
 </body>
+
 </html>
