@@ -64,7 +64,7 @@
     PostES5.prototype.edit = function (text) {
       this.text = text;
       this.update = new Date();
-    }
+    };
 
     const post1 = new PostES5('Ivan', "Some text");
     console.log(post1);
@@ -116,9 +116,6 @@
 
     // ES6
     class AttachedPostES6 extends PostES6 {
-      constructor(name, text) {
-        super(name, text);
-      }
 
       highlighted = false;
 

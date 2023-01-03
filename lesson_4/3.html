@@ -43,14 +43,14 @@
     function getDigitsOfNumber(number) {
       if (!Number.isInteger(number) || number < 0 || number > 999) {
         console.error('Enter a correct number [0-999].');
-        return {}
+        return {};
       }
 
       return {
         units: number % 10,
         dozens: Math.floor(number / 10) % 10,
         hundreds: Math.floor(number / 100)
-      }
+      };
     }
 
     console.log(getDigitsOfNumber(246));
