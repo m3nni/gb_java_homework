@@ -53,7 +53,7 @@
      */
 
     document.querySelectorAll(".product")
-      .forEach(el => el.style.fontSize = "24px");
+      .forEach(el => el.style.fontSize = "50px");
 
     /*
     3. При клике на кнопку "В корзину" название кнопки должно поменяться на
@@ -66,7 +66,7 @@
         return;
       }
       button.textContent = "Добавлено";
-      button.disable = true;
+      button.disabled = true;
     });
 
     /*
@@ -80,7 +80,7 @@
 
     const productCopy = document.querySelector('.product').cloneNode(true);
     productCopy.querySelector("img")
-      .src("https://loremflickr.com/200/300/goods?lock=37");
+      .src = "https://loremflickr.com/200/300/goods?lock=37";
     productCopy.querySelector(".productName").textContent = "Товар 4";
     document.querySelector(".product:last-of-type").replaceWith(productCopy);
 
